@@ -1,0 +1,118 @@
+fileFormatVersion: 2
+guid: d0b4fd4d377e08542a51a1831e15d25e
+timeCreated: 1492010801
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Big_Perfume_Bottle
+    100002: Big_Pump
+    100004: Bottle
+    100006: Medium_Perfume_Bottle
+    100008: //RootNode
+    100010: Small_Perfume_Bottle
+    100012: Small_Perfume_Bottle1
+    100014: Small_Perfume_Bottle1_Bottle
+    100016: Small_Perfume_Bottle_Bottle
+    100018: Small_Pump1
+    100020: Small_Pump2
+    400000: Big_Perfume_Bottle
+    400002: Big_Pump
+    400004: Bottle
+    400006: Medium_Perfume_Bottle
+    400008: //RootNode
+    400010: Small_Perfume_Bottle
+    400012: Small_Perfume_Bottle1
+    400014: Small_Perfume_Bottle1_Bottle
+    400016: Small_Perfume_Bottle_Bottle
+    400018: Small_Pump1
+    400020: Small_Pump2
+    2300000: Big_Pump
+    2300002: Bottle
+    2300004: Medium_Perfume_Bottle
+    2300006: //RootNode
+    2300008: Small_Perfume_Bottle1_Bottle
+    2300010: Small_Perfume_Bottle_Bottle
+    2300012: Small_Pump1
+    2300014: Small_Pump2
+    3300000: Big_Pump
+    3300002: Bottle
+    3300004: Medium_Perfume_Bottle
+    3300006: //RootNode
+    3300008: Small_Perfume_Bottle1_Bottle
+    3300010: Small_Perfume_Bottle_Bottle
+    3300012: Small_Pump1
+    3300014: Small_Pump2
+    4300000: Perfume_Tray
+    4300002: Bottle
+    4300004: Big_Pump
+    4300006: Medium_Perfume_Bottle
+    4300008: Small_Perfume_Bottle_Bottle
+    4300010: Small_Pump1
+    4300012: Small_Perfume_Bottle1_Bottle
+    4300014: Small_Pump2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
