@@ -10,51 +10,70 @@ public class MovePlayer : MonoBehaviour {
     private int PlayerState = 0;
     public AudioClip movementAudio;
     public AudioSource aSource;
-    private StateMachineBehaviour stateMacBehavoir;
+    private AfterRopePulled stateMacBehavoir;
+    public Animator animRef;
+    public bool doorOpen = false;
+    public GameObject invisWall;
+    public Collider waterCol;
     private void Awake()
     {
         aSource = GetComponent<AudioSource>();
-        
-    }
 
+            stateMacBehavoir = animRef.GetBehaviour<AfterRopePulled>();
+            stateMacBehavoir.movePlayerRef = this;
+   
+    }
+    
     public void DoorUp()
     {
-        //start courotine
+        if (doorOpen)
+        {
+           
+            StartCoroutine(QuickFadeWait());
+            waterCol.enabled = false;
+        }
+       
     }
 
     IEnumerator QuickFadeWait()
     {
-        //Call fade Steam script
+     //   print(PlayerState);
+        SteamVR_Fade.Start(Color.black, 1);
         yield return new WaitForSeconds(fadeWaitTime);
-        aSource.PlayOneShot(movementAudio);
+      //  aSource.PlayOneShot(movementAudio);
         switch (PlayerState)
         {
             case 0:
                 {
                     transform.position = position1.position;
+                    PlayerState++;
                     break;
                 }
             case 1:
                 {
                     transform.position = position2.position;
+                    PlayerState++;
                     break;
                 }
         }
         yield return new WaitForSeconds(fadeWaitTime);
-        //Call fade Steam script
-        PlayerState++;
-
+        // yield return new WaitForSeconds(movementAudio.length);
+        SteamVR_Fade.Start(Color.clear, 1);
+       
+        if (!waterCol.enabled && PlayerState == 1)
+        {
+            waterCol.enabled = true;
+        }
+      
+        //    print(PlayerState);
     }
 
     public void MoveToWater()
     {
-        //start coroutine
+        StartCoroutine(QuickFadeWait());
+        waterCol.enabled = false;
     }
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    
 	
 	// Update is called once per frame
 	void Update () {

@@ -37,7 +37,7 @@ public class TriggerRope : MonoBehaviour
         if (gazedAt)
         {
             timer += Time.deltaTime;
-            Debug.Log(timer);
+        //    Debug.Log(timer);
             
         }
     }
@@ -62,7 +62,7 @@ public class TriggerRope : MonoBehaviour
 
     public void PointerDown()
     {
-        Debug.Log("Pointer Down");
+     //   Debug.Log("Pointer Down");
     }
 
 }
