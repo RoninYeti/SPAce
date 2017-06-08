@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class TriggerAnim : MonoBehaviour
+public class TriggerRope : MonoBehaviour
 {
 
 
@@ -13,51 +13,50 @@ public class TriggerAnim : MonoBehaviour
 
     private bool gazedAt;
 
-    public int gumCount = 0;
-
-    public Animator gumanim;
+    public int pullCount = 0;
+        
+    public Animator RopeAnim;
 
     [SerializeField]
-    private WaterRising water;
-    void Start () {
-        
-	}
-
-    public void PerformThrow()
+    private TriggerDoor opener;
+    
+    void Start()
     {
-        gumanim.SetTrigger("Gumball Trigger");
-        water.RaiseWater();
         
     }
 
-    // Update is called once per frame
-    void Update () {
-		if (gazedAt)
+    public void OpenSesame() //this was performthrow
+    {
+        RopeAnim.SetTrigger("RopePull Trigger");
+        opener.OpenDoor();
+    }
+
+    
+    void Update()
+    {
+        if (gazedAt)
         {
             timer += Time.deltaTime;
             Debug.Log(timer);
             
         }
-	}
+    }
 
     public void PointerEnter()
     {
         //Debug.Log("Pointer Enter");
         gazedAt = true;
-        if (gumCount == 0)
+        if (pullCount == 0)
         {
+            OpenSesame();
 
-
-            PerformThrow();
-
-            gumCount += 1;
-            
+            pullCount += 1;
         }
     }
 
     public void PointerExit()
     {
-        
+        //Debug.Log("Pointer Exit");
         gazedAt = false;
     }
 
