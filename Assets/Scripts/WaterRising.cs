@@ -11,18 +11,7 @@ public class WaterRising : MonoBehaviour {
     float lerpTimer = 0;
     [SerializeField]
     float lerpTime = 3;
-    /*
-    public static float LerpTime {
-        get {
-            return lerpTime;
-        }
-         set {
-            print("Asdf");
-            lerpTime = value;
-        }
-    }
-    */
-	// Use this for initialization
+    
 	void Start ()
     {
         startingPosition = transform.position;
@@ -36,21 +25,6 @@ public class WaterRising : MonoBehaviour {
         //print(startingPosition + " " + targetPosition + " " + Mathf.Min(lerpTimer / lerpTime, 1));
         transform.position = Vector3.Lerp(startingPosition, targetPosition, Mathf.Min(lerpTimer/lerpTime,1));
 	}
-
-    /*public void GoCoroutine()
-    {
-        StartCoroutine(WaitForWater());
-    }
-
-    IEnumerator WaitForWater()
-    {
-        yield return new WaitForSeconds(1f);
-        print("1");
-
-        yield return new WaitForSeconds(1f);
-        print("2");
-        RaiseWater();
-    }*/
 
     public void RaiseWater()
     {

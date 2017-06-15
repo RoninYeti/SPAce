@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class TriggerRope : MonoBehaviour
 {
-
-
     public float gazeTime = 2f;
 
     private float timer;
@@ -34,12 +32,7 @@ public class TriggerRope : MonoBehaviour
     
     void Update()
     {
-        if (gazedAt)
-        {
-            timer += Time.deltaTime;
-        //    Debug.Log(timer);
-            
-        }
+        
     }
 
     public void PointerEnter()
@@ -59,10 +52,10 @@ public class TriggerRope : MonoBehaviour
         //Debug.Log("Pointer Exit");
         gazedAt = false;
     }
-
+    /*
     public void PointerDown()
     {
      //   Debug.Log("Pointer Down");
-    }
+    }*/
 
 }
