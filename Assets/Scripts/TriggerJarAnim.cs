@@ -33,13 +33,7 @@ public class TriggerJarAnim : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (gazedAt)
-        {
-            timer += Time.deltaTime;
-            Debug.Log(timer);
-
-
-        }
+        
     }
 
     public void PointerEnter()
@@ -48,11 +42,8 @@ public class TriggerJarAnim : MonoBehaviour {
         gazedAt = true;
         
         if (jarCount == 0)
-        {
-
-
+        {            
             PerformJarPour();
-
             jarCount += 1;
             //JarwaterRiser.GetComponent<UnityStandardAssets.Water.Water>().waterlevel += 1;
         }
@@ -64,10 +55,10 @@ public class TriggerJarAnim : MonoBehaviour {
         //Debug.Log("Pointer Exit");
         gazedAt = false;
     }
-
+    /*
     public void PointerDown()
     {
-        Debug.Log("Pointer Down");
-    }
+        //Debug.Log("Pointer Down");
+    }*/
 }
 

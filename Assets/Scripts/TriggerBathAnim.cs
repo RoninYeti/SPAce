@@ -33,13 +33,7 @@ public class TriggerBathAnim : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (gazedAt)
-        {
-            timer += Time.deltaTime;
-            Debug.Log(timer);
-
-
-        }
+        
     }
 
     public void PointerEnter()
@@ -48,12 +42,8 @@ public class TriggerBathAnim : MonoBehaviour {
         gazedAt = true;
         if (bathCount == 0)
         {
-
-
             PerformBathThrow();
-
-            bathCount += 1;
-            //BathwaterRiser.GetComponent<UnityStandardAssets.Water.Water>().waterlevel += 1;
+            bathCount += 1;            
         }
         
 
@@ -61,12 +51,11 @@ public class TriggerBathAnim : MonoBehaviour {
 
     public void PointerExit()
     {
-        //Debug.Log("Pointer Exit");
         gazedAt = false;
     }
-
+    /*
     public void PointerDown()
     {
         Debug.Log("Pointer Down");
-    }
+    }*/
 }
