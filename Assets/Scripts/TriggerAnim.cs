@@ -16,6 +16,7 @@ public class TriggerAnim : MonoBehaviour
     public int gumCount = 0;
 
     public Animator gumanim;
+    
 
     [SerializeField]
     private WaterRising water;
@@ -26,6 +27,7 @@ public class TriggerAnim : MonoBehaviour
     public void PerformThrow()
     {
         gumanim.SetTrigger("Gumball Trigger");
+        
         water.RaiseWater();
         
     }
