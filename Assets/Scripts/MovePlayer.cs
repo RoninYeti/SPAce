@@ -47,6 +47,8 @@ public class MovePlayer : MonoBehaviour {
                 {
                     transform.position = position1.position;
                     PlayerState++;
+                    TriggerCloseAnim.PerformClose();
+                    DestroyInvisWall();
                     break;
                 }
             case 1:
@@ -66,6 +68,11 @@ public class MovePlayer : MonoBehaviour {
         }
       
         //    print(PlayerState);
+    }
+
+    public void DestroyInvisWall()
+    {
+        DestroyObject(invisWall);
     }
 
     public void MoveToWater()
