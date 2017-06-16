@@ -17,24 +17,22 @@ public class MovePlayer : MonoBehaviour {
     public GameObject invisWall1;
     public GameObject invisWall2;
     public Collider waterCol;
+
     private void Awake()
     {
         aSource = GetComponent<AudioSource>();
 
             stateMacBehavoir = animRef.GetBehaviour<AfterRopePulled>();
             stateMacBehavoir.movePlayerRef = this;
-   
     }
     
     public void DoorUp()
     {
         if (doorOpen)
-        {
-           
+        { 
             StartCoroutine(QuickFadeWait());
             waterCol.enabled = false;
-        }
-       
+        }    
     }
 
     IEnumerator QuickFadeWait()
@@ -42,7 +40,7 @@ public class MovePlayer : MonoBehaviour {
      //   print(PlayerState);
         SteamVR_Fade.Start(Color.black, 1);
         yield return new WaitForSeconds(fadeWaitTime);
-      //  aSource.PlayOneShot(movementAudio);
+        // aSource.PlayOneShot(movementAudio);
         switch (PlayerState)
         {
             case 0:
@@ -90,11 +88,7 @@ public class MovePlayer : MonoBehaviour {
         waterCol.enabled = false;
     }
     
-	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () {		
 	}
-
-    
 }
