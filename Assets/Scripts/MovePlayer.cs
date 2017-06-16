@@ -14,6 +14,8 @@ public class MovePlayer : MonoBehaviour {
     public Animator animRef;
     public bool doorOpen = false;
     public GameObject invisWall;
+    public GameObject invisWall1;
+    public GameObject invisWall2;
     public Collider waterCol;
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class MovePlayer : MonoBehaviour {
                 {
                     transform.position = position2.position;
                     PlayerState++;
+                    ActivateObjects();
                     break;
                 }
         }
@@ -73,6 +76,12 @@ public class MovePlayer : MonoBehaviour {
     public void DestroyInvisWall()
     {
         DestroyObject(invisWall);
+    }
+
+    public void ActivateObjects()
+    {
+        DestroyObject(invisWall1);
+        DestroyObject(invisWall2);
     }
 
     public void MoveToWater()
