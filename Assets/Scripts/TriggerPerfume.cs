@@ -28,20 +28,20 @@ public class TriggerPerfume : MonoBehaviour {
 
     public void PointerEnter() {
         //Debug.Log("Pointer Enter");
-        gazedAt = true;
-
-        if (gasCount == 0)
-        {
-            PerfumeThrow();
-            gasCount += 1;
-        }
+        //gazedAt = true;
     }
 
     public void PointerExit() {
         gazedAt = false;
     }
 
-    /* public void PointerDown() {
-        //Debug.Log("Pointer Down");
-    } */
+    public void PointerDown() {
+        
+
+        if (gasCount == 0)
+        {
+            PerfumeThrow();
+            gasCount += 1;
+        }
+    } 
 }

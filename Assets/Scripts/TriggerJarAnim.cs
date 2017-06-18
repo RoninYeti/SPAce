@@ -29,12 +29,7 @@ public class TriggerJarAnim : MonoBehaviour {
         //Debug.Log("Pointer Enter");
         gazedAt = true;
         
-        if (jarCount == 0)
-        {            
-            PerformJarPour();
-            jarCount += 1;
-            //JarwaterRiser.GetComponent<UnityStandardAssets.Water.Water>().waterlevel += 1;
-        }
+        
     }
 
     public void PointerExit() {
@@ -42,8 +37,14 @@ public class TriggerJarAnim : MonoBehaviour {
         gazedAt = false;
     }
 
-    /* public void PointerDown() {
+    public void PointerDown() {
         //Debug.Log("Pointer Down");
-    } */
+        if (jarCount == 0)
+        {
+            PerformJarPour();
+            jarCount += 1;
+
+        }
+    } 
 }
 

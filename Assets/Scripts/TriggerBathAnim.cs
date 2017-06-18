@@ -29,18 +29,19 @@ public class TriggerBathAnim : MonoBehaviour {
         //Debug.Log("Pointer Enter");
         gazedAt = true;
 
-        if (bathCount == 0)
-        {
-            PerformBathThrow();
-            bathCount += 1;            
-        }
+        
     }
 
     public void PointerExit() {
         gazedAt = false;
     }
 
-    /* public void PointerDown() {
-        Debug.Log("Pointer Down");
-    }*/
+     public void PointerDown() {
+        //Debug.Log("Pointer Down");
+        if (bathCount == 0)
+        {
+            PerformBathThrow();
+            bathCount += 1;
+        }
+    }
 }
