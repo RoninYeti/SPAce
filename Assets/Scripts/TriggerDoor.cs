@@ -6,22 +6,13 @@ public class TriggerDoor : MonoBehaviour {
         
     public Animator DoorAnim;
     
-    
-	void Start()
-    {
-
+	void Start() {
     }
 	
-	
-	void Update () {
-        
+	void Update () {    
 	}
 
-    public void OpenDoor()
-    {
+    public void OpenDoor() {
         DoorAnim.SetTrigger("Door Trigger");
-    }
-
-    
-        
+    }   
 }

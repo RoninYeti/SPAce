@@ -6,39 +6,30 @@ using UnityEngine;
 public class TriggerAnim : MonoBehaviour
 {
     public float gazeTime = 2f;
-
     private float timer;
-
     private bool gazedAt;
-
     public int gumCount = 0;
-
     public Animator gumanim;
     
     [SerializeField]
     private WaterRising water;
+
     void Start () {
-        
 	}
 
-    public void PerformThrow()
-    {
+    public void PerformThrow() {
         DialTurnAnim.PerformTurn();
         gumanim.SetTrigger("Gumball Trigger");
         //Debug.Log("this is perform throw working");
         water.RaiseWater();
-        
     }
 
-    // Update is called once per frame
-    void Update () {
-		
+    void Update () {	
 	}
 
-    public void PointerEnter()
-    {
-        
+    public void PointerEnter() {   
         gazedAt = true;
+
         if (gumCount == 0)
         {
             PerformThrow();
@@ -46,13 +37,11 @@ public class TriggerAnim : MonoBehaviour
         }
     }
 
-    public void PointerExit()
-    {
+    public void PointerExit() {
         gazedAt = false;
     }
 
-    /*public void PointerDown()
-    {
+    /*public void PointerDown() {
         //Debug.Log("Pointer Down");
     }
     */

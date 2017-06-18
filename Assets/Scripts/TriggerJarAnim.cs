@@ -4,40 +4,28 @@ using UnityEngine;
 
 public class TriggerJarAnim : MonoBehaviour {
 
-    // Use this for initialization
-
     public float gazeTime = 2f;
-
     private float timer;
-
     private bool gazedAt;
-
     public Animator jarpouranim;
+    public int jarCount = 0;
+    //public GameObject JarwaterRiser;
 
     [SerializeField]
     private WaterRising water;
 
-    //public GameObject JarwaterRiser;
-
-    public int jarCount = 0;
-
     void Start () {
-		
 	}
 
-    public void PerformJarPour()
-    {
+    public void PerformJarPour() {
         jarpouranim.SetTrigger("JarPour Trigger");
         water.RaiseWater();
     }
 
-    // Update is called once per frame
-    void Update () {
-        
+    void Update () {        
     }
 
-    public void PointerEnter()
-    {
+    public void PointerEnter() {
         //Debug.Log("Pointer Enter");
         gazedAt = true;
         
@@ -47,18 +35,15 @@ public class TriggerJarAnim : MonoBehaviour {
             jarCount += 1;
             //JarwaterRiser.GetComponent<UnityStandardAssets.Water.Water>().waterlevel += 1;
         }
-
     }
 
-    public void PointerExit()
-    {
+    public void PointerExit() {
         //Debug.Log("Pointer Exit");
         gazedAt = false;
     }
-    /*
-    public void PointerDown()
-    {
+
+    /* public void PointerDown() {
         //Debug.Log("Pointer Down");
-    }*/
+    } */
 }
 
