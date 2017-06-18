@@ -29,11 +29,7 @@ public class TriggerRope : MonoBehaviour {
         //Debug.Log("Pointer Enter");
         gazedAt = true;
 
-        if (pullCount == 0)
-        {
-            OpenSesame();
-            pullCount += 1;
-        }
+        
     }
 
     public void PointerExit(){
@@ -41,7 +37,12 @@ public class TriggerRope : MonoBehaviour {
         gazedAt = false;
     }
 
-    /* public void PointerDown() {
-     //   Debug.Log("Pointer Down");
-    } */
+    public void PointerDown() {
+        //   Debug.Log("Pointer Down");
+        if (pullCount == 0)
+        {
+            OpenSesame();
+            pullCount += 1;
+        }
+    } 
 }
