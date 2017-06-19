@@ -17,7 +17,7 @@ public class MovePlayer : MonoBehaviour {
     public GameObject invisWall1;
     public GameObject invisWall2;
     public Collider waterCol;
-
+    
     private void Awake()
     {
         aSource = GetComponent<AudioSource>();
@@ -87,8 +87,8 @@ public class MovePlayer : MonoBehaviour {
         StartCoroutine(QuickFadeWait());
         waterCol.enabled = false;
     }
-    
-	// Update is called once per frame
-	void Update () {		
+
+    void Update () {
+        
 	}
 }

@@ -9,7 +9,6 @@ public class TriggerRope : MonoBehaviour {
     private bool gazedAt;
     public int pullCount = 0;
     public Animator RopeAnim;
-
     [SerializeField]
     private TriggerDoor opener;
     
@@ -29,11 +28,7 @@ public class TriggerRope : MonoBehaviour {
         //Debug.Log("Pointer Enter");
         gazedAt = true;
 
-        if (pullCount == 0)
-        {
-            OpenSesame();
-            pullCount += 1;
-        }
+        
     }
 
     public void PointerExit(){
@@ -41,7 +36,12 @@ public class TriggerRope : MonoBehaviour {
         gazedAt = false;
     }
 
-    /* public void PointerDown() {
-     //   Debug.Log("Pointer Down");
-    } */
+    public void PointerDown() {
+        //   Debug.Log("Pointer Down");
+        if (pullCount == 0)
+        {
+            OpenSesame();
+            pullCount += 1;
+        }
+    } 
 }

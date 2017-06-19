@@ -8,6 +8,9 @@ public class TriggerPerfume : MonoBehaviour {
     private float timer;
     private bool gazedAt;
     public int gasCount = 0;
+    [SerializeField]
+    private float GasAnimationTime = 3;
+    private float GasAnimationTimer = Mathf.Infinity;
 
     [SerializeField]
     private WaterRising water;
@@ -19,29 +22,37 @@ public class TriggerPerfume : MonoBehaviour {
     public void PerfumeThrow() {
         TriggerPump.PerformPump();
         transform.GetChild(2).gameObject.SetActive(true);
-        water.RaiseWater();
+        //water.RaiseWater();
+        GasAnimationTimer = GasAnimationTime;
 
     }
 
-    void Update() {
+    void Update()
+    {
+        GasAnimationTimer -= Time.deltaTime;
+        if (GasAnimationTimer <= 0)
+        {
+            water.RaiseWater();
+            GasAnimationTimer = Mathf.Infinity;
+        }
     }
 
     public void PointerEnter() {
         //Debug.Log("Pointer Enter");
-        gazedAt = true;
-
-        if (gasCount == 0)
-        {
-            PerfumeThrow();
-            gasCount += 1;
-        }
+        //gazedAt = true;
     }
 
     public void PointerExit() {
         gazedAt = false;
     }
 
-    /* public void PointerDown() {
-        //Debug.Log("Pointer Down");
-    } */
+    public void PointerDown() {
+        
+
+        if (gasCount == 0)
+        {
+            PerfumeThrow();
+            gasCount += 1;            
+        }
+    } 
 }
