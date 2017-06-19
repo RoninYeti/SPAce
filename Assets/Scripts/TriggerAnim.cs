@@ -13,35 +13,30 @@ public class TriggerAnim : MonoBehaviour
     [SerializeField]
     private WaterRising water;
     [SerializeField]
-    private float animationTime = 3;
-    private float animationTimer = Mathf.Infinity;
+    private float GumAnimationTime = 3; //change this one variable to affect the seconds it takes before water starts rising after animation
+    private float GumAnimationTimer = Mathf.Infinity;
 
     void Start () {
         
 	}
 
     public void PerformThrow() {
-        //StartCoroutine(WaitforGum());
         DialTurnAnim.PerformTurn();
-        gumanim.SetTrigger("Gumball Trigger");
-        //Debug.Log("this is perform throw working");
-        print("Gumball thrown");
-        animationTimer = animationTime;
+        gumanim.SetTrigger("Gumball Trigger");        
+        GumAnimationTimer = GumAnimationTime;
     }
 
     void Update () {
-        animationTimer -= Time.deltaTime;
-        if (animationTimer <= 0)
+        GumAnimationTimer -= Time.deltaTime;
+        if (GumAnimationTimer <= 0)
         {
             water.RaiseWater();
-            animationTimer = Mathf.Infinity;
+            GumAnimationTimer = Mathf.Infinity;
         }
     }
 
     public void PointerEnter() {   
-        gazedAt = true;
-
-        
+        gazedAt = true;        
     }
 
     public void PointerExit() {
@@ -54,13 +49,8 @@ public class TriggerAnim : MonoBehaviour
         {
             
             PerformThrow();
-            gumCount += 1;
+            gumCount += 1;            
         }
     }
-    /*
-    IEnumerator WaitforGum()
-    {
-        yield return new WaitForSeconds(1000f);
-    }
-    */
+    
 }

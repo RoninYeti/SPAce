@@ -9,7 +9,9 @@ public class TriggerJarAnim : MonoBehaviour {
     private bool gazedAt;
     public Animator jarpouranim;
     public int jarCount = 0;
-    //public GameObject JarwaterRiser;
+    [SerializeField]
+    private float JarAnimationTime = 3;
+    private float JarAnimationTimer = Mathf.Infinity;
 
     [SerializeField]
     private WaterRising water;
@@ -19,10 +21,18 @@ public class TriggerJarAnim : MonoBehaviour {
 
     public void PerformJarPour() {
         jarpouranim.SetTrigger("JarPour Trigger");
-        water.RaiseWater();
+        //water.RaiseWater();
+        JarAnimationTimer = JarAnimationTime;
     }
 
-    void Update () {        
+    void Update ()
+    {
+        JarAnimationTimer -= Time.deltaTime;
+        if (JarAnimationTimer <= 0)
+        {
+            water.RaiseWater();
+            JarAnimationTimer = Mathf.Infinity;
+        }
     }
 
     public void PointerEnter() {
@@ -42,8 +52,7 @@ public class TriggerJarAnim : MonoBehaviour {
         if (jarCount == 0)
         {
             PerformJarPour();
-            jarCount += 1;
-
+            jarCount += 1;            
         }
     } 
 }

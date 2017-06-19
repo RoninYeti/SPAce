@@ -9,7 +9,6 @@ public class TriggerRope : MonoBehaviour {
     private bool gazedAt;
     public int pullCount = 0;
     public Animator RopeAnim;
-
     [SerializeField]
     private TriggerDoor opener;
     

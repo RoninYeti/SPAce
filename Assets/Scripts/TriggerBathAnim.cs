@@ -9,7 +9,10 @@ public class TriggerBathAnim : MonoBehaviour {
     private bool gazedAt;
     public Animator bathanim;
     public int bathCount = 0;
-    //public GameObject BathwaterRiser;
+    [SerializeField]
+    private float BathAnimationTime = 3;
+    private float BathAnimationTimer = Mathf.Infinity;
+    
 
     [SerializeField]
     private WaterRising water;
@@ -19,10 +22,18 @@ public class TriggerBathAnim : MonoBehaviour {
 
     public void PerformBathThrow() {
         bathanim.SetTrigger("Bathbomb Trigger");
-        water.RaiseWater();
+        //water.RaiseWater();
+        BathAnimationTimer = BathAnimationTime;
     }
 
-    void Update(){
+    void Update()
+    {
+        BathAnimationTimer -= Time.deltaTime;
+        if (BathAnimationTimer <= 0)
+        {
+            water.RaiseWater();
+            BathAnimationTimer = Mathf.Infinity;
+        }
     }
 
     public void PointerEnter() {
@@ -41,7 +52,7 @@ public class TriggerBathAnim : MonoBehaviour {
         if (bathCount == 0)
         {
             PerformBathThrow();
-            bathCount += 1;
+            bathCount += 1;            
         }
     }
 }
