@@ -8,7 +8,6 @@ public class MovePlayer : MonoBehaviour {
     public Transform position2;
     public float fadeWaitTime = 2f;
     private int PlayerState = 0;
-    public AudioClip introSong;
     public AudioClip movementAudio;
     public AudioClip doorClose;
     public AudioSource aSource;
@@ -23,7 +22,6 @@ public class MovePlayer : MonoBehaviour {
     
     private void Awake() {
         aSource = GetComponent<AudioSource>();
-        aSource.PlayOneShot(introSong);
         stateMacBehavoir = animRef.GetBehaviour<AfterRopePulled>();
         stateMacBehavoir.movePlayerRef = this;
     }

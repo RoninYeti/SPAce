@@ -26,7 +26,7 @@ public class WaterRising : MonoBehaviour {
     public AudioClip victoryNote;
     public AudioClip endSong;
     public AudioSource aSource;
-
+    bool Ending;
     [SerializeField]
     float lerpTime = 3;
 
@@ -48,8 +48,10 @@ public class WaterRising : MonoBehaviour {
             }
         }
 
-        if (level == 4) {
-            //aSource.PlayOneShot(victoryNote);            Fix This Sound Effect!
+        if (level == 4 && !Ending) {
+            Ending = true;
+            aSource.Stop();
+            aSource.PlayOneShot(victoryNote);   
             StartCoroutine(WaitFor());
         }
     }
@@ -68,7 +70,7 @@ public class WaterRising : MonoBehaviour {
         DestroyObject(jar);
         DestroyObject(spa);
         SteamVR_Fade.Start(Color.clear, 2);
-        //aSource.PlayOneShot(endSong);                     Fix This Song!!
+        aSource.PlayOneShot(endSong);
     }
 
     public void RaiseWater() {
