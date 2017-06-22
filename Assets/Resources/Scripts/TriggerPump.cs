@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerPump : MonoBehaviour {
+namespace SPAce {
+    public class TriggerPump : MonoBehaviour {
 
-    static TriggerPump instance;
-    public Animator pumpanim;
+        static TriggerPump instance;
+        public Animator pumpanim;
 
-    void Start () {
-        instance = this;
-	}
+        void Start () {
+            instance = this;
+	    }
 	
-    public static void PerformPump() {
-        instance.pumpanim.SetTrigger("Trigger Pump");
-    }
+        public static void PerformPump() {
+            instance.pumpanim.SetTrigger("Trigger Pump");
+        }
 
-	void Update () {
-	}
+	    void Update () {
+	    }
+    }
 }

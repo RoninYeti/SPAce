@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerCloseAnim : MonoBehaviour {
+namespace SPAce {
+    public class TriggerCloseAnim : MonoBehaviour {
 
-    static TriggerCloseAnim instance;
-    public Animator closeanim;
+        static TriggerCloseAnim instance;
+        public Animator closeanim;
 
-    void Start () {
-        instance = this;
-	}
+        void Start () {
+            instance = this;
+	    }
 	
-    public static void PerformClose() {
-        instance.closeanim.SetTrigger("Door Close Trigger");
+        public static void PerformClose() {
+            instance.closeanim.SetTrigger("Door Close Trigger");
+        }
+	
+	    void Update () {
+	    }
     }
-	
-	void Update () {
-	}
 }
