@@ -35,7 +35,9 @@ namespace SPAce {
         }
 
         IEnumerator QuickFadeWait() {
-            SteamVR_Fade.Start(Color.black, 1);
+            //print("Requesting fade");
+            Fade.StartFade(Color.black, 1, 2);
+            //SteamVR_Fade.Start(Color.black, 2);
             aSource.PlayOneShot(movementAudio);
             yield return new WaitForSeconds(movementAudio.length);
             switch (PlayerState) {
@@ -56,7 +58,7 @@ namespace SPAce {
             }
 
             //yield return new WaitForSeconds(fadeWaitTime);
-            SteamVR_Fade.Start(Color.clear, 1);
+            SteamVR_Fade.Start(Color.clear, 2);
             if (!waterCol.enabled && PlayerState == 1) {
                 waterCol.enabled = true;
             }

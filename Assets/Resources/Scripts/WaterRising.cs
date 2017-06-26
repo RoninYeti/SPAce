@@ -59,7 +59,7 @@ namespace SPAce {
         }
 
         IEnumerator WaitFor() {
-            SteamVR_Fade.Start(Color.black, 1);
+            Fade.StartFade(Color.black, 1, 2);
             yield return new WaitForSeconds(fadingTime);
             nebular.SetActive(true);
             GetComponent<MeshRenderer>().enabled = false;
@@ -71,7 +71,7 @@ namespace SPAce {
             DestroyObject(jelly);
             DestroyObject(jar);
             DestroyObject(spa);
-            SteamVR_Fade.Start(Color.clear, 2);
+            //SteamVR_Fade.Start(Color.clear, 2);
             aSource.PlayOneShot(endSong);
         }
 
