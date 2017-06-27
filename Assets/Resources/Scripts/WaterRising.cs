@@ -23,10 +23,11 @@ namespace SPAce {
         public GameObject bathbomb;
         public GameObject spa;
         public float fadingTime = 3f;
+
+        public AudioSource aSource;
         public AudioClip waterRising;
         public AudioClip victoryNote;
-        public AudioClip endSong;
-        public AudioSource aSource;
+
         bool Ending;
 
         [SerializeField]
@@ -71,8 +72,6 @@ namespace SPAce {
             DestroyObject(jelly);
             DestroyObject(jar);
             DestroyObject(spa);
-            //SteamVR_Fade.Start(Color.clear, 2);
-            aSource.PlayOneShot(endSong);
         }
 
         public void RaiseWater() {
