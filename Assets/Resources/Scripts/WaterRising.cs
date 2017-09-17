@@ -15,13 +15,8 @@ namespace SPAce {
         public delegate void WaterRisingFinishedHandler(int level);
         public event WaterRisingFinishedHandler WaterRisingFinished;
         public GameObject nebular;
-        public GameObject steamer;
-        public GameObject gumball;
-        public GameObject perfume;
-        public GameObject jelly;
-        public GameObject jar;
-        public GameObject bathbomb;
-        public GameObject spa;
+        [SerializeField]
+        private GameObject[] objectsToDestroy;
         public float fadingTime = 3f;
 
         public AudioSource aSource;
@@ -65,13 +60,9 @@ namespace SPAce {
             nebular.SetActive(true);
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
-            DestroyObject(steamer);
-            DestroyObject(gumball);
-            DestroyObject(perfume);
-            DestroyObject(bathbomb);
-            DestroyObject(jelly);
-            DestroyObject(jar);
-            DestroyObject(spa);
+            foreach (GameObject obj in objectsToDestroy) {
+                Destroy(obj);
+            }
         }
 
         public void RaiseWater() {

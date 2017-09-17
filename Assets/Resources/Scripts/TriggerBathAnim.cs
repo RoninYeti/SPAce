@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace SPAce {
     public class TriggerBathAnim : MonoBehaviour {
@@ -48,7 +49,8 @@ namespace SPAce {
          public void PointerDown() {
             if (bathCount == 0) {
                 PerformBathThrow();
-                bathCount += 1;            
+                bathCount += 1;
+                Destroy(GetComponent<EventTrigger>());
             }
         }
     }

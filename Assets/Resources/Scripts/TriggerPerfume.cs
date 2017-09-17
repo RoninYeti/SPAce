@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace SPAce {
     public class TriggerPerfume : MonoBehaviour {
@@ -50,7 +51,8 @@ namespace SPAce {
         public void PointerDown() {
             if (gasCount == 0) {
                 PerfumeThrow();
-                gasCount += 1;            
+                gasCount += 1;
+                Destroy(GetComponent<EventTrigger>());
             }
         } 
     }

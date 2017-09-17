@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace SPAce {
     public class TriggerJarAnim : MonoBehaviour {
@@ -37,20 +38,11 @@ namespace SPAce {
             }
         }
 
-        /* public void PointerEnter() {
-            Debug.Log("Pointer Enter");
-            gazedAt = true;  
-        }
-
-        public void PointerExit() {
-            Debug.Log("Pointer Exit");
-            gazedAt = false;
-        } */
-
         public void PointerDown() {
             if (jarCount == 0) {
                 PerformJarPour();
-                jarCount += 1;            
+                jarCount += 1;
+                Destroy(GetComponent<EventTrigger>());
             }
         } 
     }

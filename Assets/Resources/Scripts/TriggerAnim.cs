@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 
 namespace SPAce {
     public class TriggerAnim : MonoBehaviour {
@@ -52,7 +52,8 @@ namespace SPAce {
         public void PointerDown() {
             if (gumCount == 0) {
                 PerformThrow();
-                gumCount += 1;            
+                gumCount += 1;
+                Destroy(GetComponent<EventTrigger>());
             }
         }   
     }
