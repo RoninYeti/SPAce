@@ -25,14 +25,6 @@ namespace SPAce {
         void Update() {  
         }
 
-        /* public void PointerEnter() {
-            gazedAt = true;   
-        }
-
-        public void PointerExit() {
-            gazedAt = false;
-        } */
-
         public void PointerDown() {
             if (pullCount == 0) {
                 OpenSesame();

@@ -14,11 +14,14 @@ namespace SPAce {
         float lerpTimer = 0;
         public delegate void WaterRisingFinishedHandler(int level);
         public event WaterRisingFinishedHandler WaterRisingFinished;
-        public GameObject nebular;
+        public GameObject nebular1;
+        public GameObject nebular2;
+        public GameObject comet;
+
         [SerializeField]
         private GameObject[] objectsToDestroy;
-        public float fadingTime = 3f;
 
+        public float fadingTime = 3f;
         public AudioSource aSource;
         public AudioClip waterRising;
         public AudioClip victoryNote;
@@ -31,7 +34,9 @@ namespace SPAce {
         void Start() {
             startingPosition = transform.position;
             targetPosition = transform.position;
-            nebular.SetActive(false);
+            nebular1.SetActive(false);
+            nebular2.SetActive(false);
+            comet.SetActive(false);
         }
 
         void Update() {
@@ -57,7 +62,9 @@ namespace SPAce {
         IEnumerator WaitFor() {
             Fade.StartFade(Color.black, 1, 2);
             yield return new WaitForSeconds(fadingTime);
-            nebular.SetActive(true);
+            nebular1.SetActive(true);
+            nebular2.SetActive(true);
+            comet.SetActive(true);
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
             foreach (GameObject obj in objectsToDestroy) {

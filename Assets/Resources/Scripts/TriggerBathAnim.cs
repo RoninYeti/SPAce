@@ -38,14 +38,6 @@ namespace SPAce {
             }
         }
 
-        /* public void PointerEnter() {
-            gazedAt = true;
-        }
-
-        public void PointerExit() {
-            gazedAt = false;
-        } */
-
          public void PointerDown() {
             if (bathCount == 0) {
                 PerformBathThrow();

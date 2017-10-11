@@ -35,17 +35,15 @@ namespace SPAce {
         }
 
         IEnumerator QuickFadeWait() {
-            //print("Requesting fade");
             Fade.StartFade(Color.black, 1, 2);
-            //SteamVR_Fade.Start(Color.black, 2);
             aSource.PlayOneShot(movementAudio);
             yield return new WaitForSeconds(movementAudio.length);
             switch (PlayerState) {
                 case 0: {
-                        transform.position = position1.position;
-                        PlayerState++;
                         TriggerCloseAnim.PerformClose();
                         aSource.PlayOneShot(doorClose);
+                        transform.position = position1.position;
+                        PlayerState++;
                         DestroyInvisWall();
                         break;
                     }
@@ -57,7 +55,6 @@ namespace SPAce {
                     }
             }
 
-            //yield return new WaitForSeconds(fadeWaitTime);
             SteamVR_Fade.Start(Color.clear, 2);
             if (!waterCol.enabled && PlayerState == 1) {
                 waterCol.enabled = true;

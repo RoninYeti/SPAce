@@ -41,14 +41,6 @@ namespace SPAce {
             }
         }
 
-        /* public void PointerEnter() {   
-            gazedAt = true;        
-        }
-
-        public void PointerExit() {
-            gazedAt = false;
-        } */
-
         public void PointerDown() {
             if (gumCount == 0) {
                 PerformThrow();

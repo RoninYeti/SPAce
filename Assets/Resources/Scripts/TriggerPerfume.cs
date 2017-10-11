@@ -39,15 +39,6 @@ namespace SPAce {
             }
         }
 
-        /* public void PointerEnter() {
-            Debug.Log("Pointer Enter");
-            gazedAt = true;
-        }
-
-        public void PointerExit() {
-            gazedAt = false;
-        } */
-
         public void PointerDown() {
             if (gasCount == 0) {
                 PerfumeThrow();
