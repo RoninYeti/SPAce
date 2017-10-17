@@ -12,7 +12,7 @@ namespace SPAce {
         void Start() {
         }
 	
-	    void Update() {    
+	    void Update () {    
 	    }
 
         public void OpenDoor() {
