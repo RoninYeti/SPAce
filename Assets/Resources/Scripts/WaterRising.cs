@@ -61,6 +61,7 @@ namespace SPAce {
         }
 
         IEnumerator WaitFor() {
+            yield return new WaitForSeconds(2f);
             Fade.StartFade(Color.black, 1, 2);
             yield return new WaitForSeconds(fadingTime);
             nebular1.SetActive(true);
@@ -68,10 +69,12 @@ namespace SPAce {
             comet.SetActive(true);
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
+
             foreach (GameObject obj in objectsToDestroy) {
                 Destroy(obj);
             }
-            yield return new WaitForSeconds(15f);
+
+            yield return new WaitForSeconds(16f);
             EndGameUI.SetActive(true);
         }
 

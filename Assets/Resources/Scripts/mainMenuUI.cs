@@ -6,25 +6,33 @@ using UnityEngine.SceneManagement;
 namespace SPAce {
 	public class mainMenuUI : MonoBehaviour {
 
-		void Start () {
+        public AudioSource aSource;
+        public AudioClip buttonPress;
+        public GameObject buttonSparkPlay;
+        public GameObject buttonSparkExit;
+
+        void Start () {
 		}
 		
 		void Update () {	
 		}
 
 		public void StartGame() {
-            Fade.StartFade(Color.black, 1, 2);
+            buttonSparkPlay.SetActive(true);
+            aSource.PlayOneShot(buttonPress);
             StartCoroutine(QuickFadeWait());
         }
 
         IEnumerator QuickFadeWait() {
-            yield return new WaitForSeconds(3);
+            //Instantiate(buttonSpark, transform.position, transform.rotation);
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(1);
-            SteamVR_Fade.Start(Color.clear, 2);
         }
 
         public void EndGame() {
-			Application.Quit ();
+            buttonSparkExit.SetActive(true);
+            aSource.PlayOneShot(buttonPress);
+            Application.Quit ();
 		}
 	}
 }

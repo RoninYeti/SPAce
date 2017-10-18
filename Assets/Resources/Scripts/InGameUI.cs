@@ -6,15 +6,17 @@ using UnityEngine.SceneManagement;
 namespace SPAce {
 	public class InGameUI : MonoBehaviour {
 
-		public float timeToWait=5f;
+		public float timeToWait=8f;
 
-		void OnEnable() {
-			StartCoroutine(GotoFirstScene());
+        void OnEnable() {
+            StartCoroutine(GotoFirstScene());
 		}
 
 		IEnumerator GotoFirstScene() {
 			yield return new WaitForSeconds(timeToWait);
-			SceneManager.LoadScene(0);
+            Fade.StartFade(Color.black, 1, 2);
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene(0);
 		}
 	}
 }
