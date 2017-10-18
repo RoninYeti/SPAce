@@ -46,13 +46,13 @@ namespace SPAce {
                         PlayerState++;
                         DestroyInvisWall();
                         break;
-                    }
+                }
                 case 1: {
                         transform.position = position2.position;
                         PlayerState++;
                         ActivateObjects();
                         break;
-                    }
+                }
             }
 
             SteamVR_Fade.Start(Color.clear, 2);

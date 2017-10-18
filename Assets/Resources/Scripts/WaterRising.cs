@@ -25,6 +25,7 @@ namespace SPAce {
         public AudioSource aSource;
         public AudioClip waterRising;
         public AudioClip victoryNote;
+        public GameObject EndGameUI;
 
         bool Ending;
 
@@ -70,6 +71,8 @@ namespace SPAce {
             foreach (GameObject obj in objectsToDestroy) {
                 Destroy(obj);
             }
+            yield return new WaitForSeconds(15f);
+            EndGameUI.SetActive(true);
         }
 
         public void RaiseWater() {
