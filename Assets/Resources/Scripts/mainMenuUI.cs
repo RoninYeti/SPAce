@@ -14,8 +14,10 @@ namespace SPAce {
         void Start () {
 		}
 		
-		void Update () {	
-		}
+		void Update () {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
 
 		public void StartGame() {
             buttonSparkPlay.SetActive(true);

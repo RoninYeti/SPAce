@@ -76,7 +76,8 @@ namespace SPAce {
             waterCol.enabled = false;
         }
 
-        void Update () {  
-	    }
+        void Update () {
+            Cursor.visible = false;
+        }
     }
 }
